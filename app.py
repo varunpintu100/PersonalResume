@@ -19,9 +19,9 @@ app.secret_key='Varun'
 api = Api(app)
 
 jwt = JWT(app,authenticate,identity)
-@app.before_first_request
-def create_tables():
-    db.create_all()
+# @app.before_first_request
+# def create_tables():
+#     db.create_all()
 
 
 @app.route("/")
