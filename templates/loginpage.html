@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="../static/styles/css/main.css">
+    </head>
+    <body>
+        <img src="https://raw.githubusercontent.com/MariyaSha/SimpleGreetingApp/main/logo.png">
+        <br>
+        <form action="login" method="post">
+            {% for message in get_flashed_messages()%}
+            <p> {{message}} </p>
+            {% endfor %}
+            <br>
+            <p>Enter Username :</p>
+            <input type="text" name="username_input">
+            <br>
+            <br>
+            <p>Enter Password :</p>
+            <input type="password" name="password_input">
+            <br>
+            <input type="submit" value="Login" id="greet">
+        </form>
+    </body>
+</html>
