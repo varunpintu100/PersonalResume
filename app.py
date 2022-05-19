@@ -19,6 +19,7 @@ app.secret_key='Varun'
 api = Api(app)
 
 jwt = JWT(app,authenticate,identity)
+
 # @app.before_first_request
 # def create_tables():
 #     db.create_all()
@@ -37,6 +38,8 @@ def login():
         return render_template("index.html"),200
     else:
         return render_template("Error.html"),404
+
+
 api.add_resource(UserRegister,'/register')
 
 if __name__=='__main__':

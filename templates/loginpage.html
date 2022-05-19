@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="../static/styles/css/main.css">
     </head>
     <body>
-        <img src="https://raw.githubusercontent.com/MariyaSha/SimpleGreetingApp/main/logo.png">
+        <img src="../static/styles/images/welcome.jpg">
         <br>
         <form action="login" method="post">
             {% for message in get_flashed_messages()%}
@@ -22,5 +22,6 @@
             <br>
             <input type="submit" value="Login" id="greet">
         </form>
+        <!-- <a href='https://varun-resume.herokuapp.com/register'>Not a existing user click here!!</a> -->
     </body>
 </html>
