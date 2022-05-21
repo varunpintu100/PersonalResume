@@ -27,7 +27,7 @@ jwt = JWT(app,authenticate,identity)
 
 @app.route("/")
 def index():
-    flash("PLease enter your login details!!!")
+    flash("Please enter your login details!!!")
     return render_template("loginpage.html")
 
 @app.route("/login",methods=["POST"])
@@ -39,8 +39,17 @@ def login():
     else:
         return render_template("Error.html"),404
 
-
-api.add_resource(UserRegister,'/register')
+@app.route('/register',methods=["POST","GET"])
+def register():
+    if request.method=='POST':
+        username = str(request.form['username_input'])
+        password = str(request.form['password_input'])
+        status=UserRegister.post(username,password)
+        if status==400:
+            return render_template("user_registerError.html")
+        return render_template("RegistrationSucess.html")
+    else:
+        return render_template("Register.html"),200
 
 if __name__=='__main__':
     from database import db  # we are importing this as a part of circular imports
