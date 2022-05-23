@@ -1,5 +1,5 @@
 body{
-    background-color: slategray;
+    background-color: slategrey;
     text-align: center;
 }
 p{
@@ -36,6 +36,16 @@ input:focus{
 }
 
 #greet:hover{
+    background-color: mediumvioletred;
+    cursor: pointer;
+}
+#Signup
+{
+  background-color: palevioletred;
+  color: white;
+  width: 200px;
+}
+#Signup:hover{
     background-color: mediumvioletred;
     cursor: pointer;
 }
