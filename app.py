@@ -24,7 +24,7 @@ jwt = JWT(app,authenticate,identity)
 def create_tables():
     db.create_all()
 
-
+#this needs to be commented all the time
 # @app.route("/")
 # def index():
 #     flash("Please enter your login details!!!")
