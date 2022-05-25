@@ -25,10 +25,10 @@ def create_tables():
     db.create_all()
 
 
-@app.route("/")
-def index():
-    flash("Please enter your login details!!!")
-    return render_template("loginpage.html")
+# @app.route("/")
+# def index():
+#     flash("Please enter your login details!!!")
+#     return render_template("loginpage.html")
 
 @app.route("/login",methods=["POST"])
 def login():
