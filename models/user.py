@@ -11,10 +11,12 @@ class UserModel(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     username=db.Column(db.String(80))
     password=db.Column(db.String(80))
+    email=db.Column(db.String(80))
 
-    def __init__(self,username,password):
+    def __init__(self,username,password,email):
         self.username = username
         self.password = password
+        self.email=email
 
     @classmethod
     def find_by_username(cls,username):
