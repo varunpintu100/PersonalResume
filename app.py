@@ -20,9 +20,9 @@ api = Api(app)
 
 jwt = JWT(app,authenticate,identity)
 
-# @app.before_first_request
-# def create_tables():
-#     db.create_all()
+@app.before_first_request
+def create_tables():
+    db.create_all()
 
 
 @app.route("/")
@@ -44,6 +44,8 @@ def register():
     if request.method=='POST':
         username = str(request.form['username_input'])
         password = str(request.form['password_input'])
+        if(username =="" or password==""):
+            return render_template("MissingFields.html",title="MissingField")
         status=UserRegister.post(username,password)
         if status==400:
             return render_template("user_registerError.html")
