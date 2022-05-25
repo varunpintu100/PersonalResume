@@ -20,15 +20,15 @@ api = Api(app)
 
 jwt = JWT(app,authenticate,identity)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
+# @app.before_first_request
+# def create_tables():
+#     db.create_all()
 
-#this needs to be commented all the time
-# @app.route("/")
-# def index():
-#     flash("Please enter your login details!!!")
-#     return render_template("loginpage.html")
+
+@app.route("/")
+def index():
+    flash("Please enter your login details!!!")
+    return render_template("loginpage.html")
 
 @app.route("/login",methods=["POST"])
 def login():
